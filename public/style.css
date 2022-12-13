@@ -1,12 +1,50 @@
-header{
+@font-face {
+  font-family: 'Coolvetica';
+  src: url(/resources/fonts/coolvetica.otf);
+}
+
+html, body{
+  margin: 0;
+  height:100%;
+}
+
+body{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  font-family: 'Coolvetica';
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
-  padding-top: 10px;
+  padding: 20px;
   height: 4vh;
-  background-color: rgb(169, 169, 169);
+  background-color: rgb(81, 142, 106);
+  color:rgb(221, 228, 228);
+}
+
+#Title{
+ font-size: 6vh; 
+}
+
+.in-header{
+  font-size: 3vh;
+  display:flex;
+  margin:20px;
+}
+
+.navigation-tab{
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 footer{
@@ -14,19 +52,44 @@ footer{
   bottom: 0;
   left: 0;
   right: 0;
-  text-align: center;
-  padding-top: 10px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
   height: 3vh;
-  background-color: rgb(169, 169, 169);
+  background-color: rgb(177, 213, 212);
+}
+
+main{
+  height: 100%;
+  overflow-y: scroll;
+  flex:auto;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content:center;
+  background-color: rgb(220, 220, 220);
+  border: 3px solid black
 }
 
 #app{
-  display: flex;
-  height: 85vh;
+  background-color:rgb(165, 164, 164);
+  height: 100%;
+  width: 100%;
   display:flex;
-  margin-top: 7vh;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(220, 220, 220);
-  border: 3px solid black
+  margin-top: 8.5vh;
+  margin-bottom: 4vh;
+  border: 3px solid black;
+
+}
+
+.post{
+  height:60px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius:rgb(177, 213, 212);
 }
