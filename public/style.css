@@ -1,7 +1,4 @@
-@font-face {
-  font-family: 'Coolvetica';
-  src: url(/resources/fonts/coolvetica.otf);
-}
+
 
 html, body{
   margin: 0;
@@ -16,7 +13,6 @@ body{
 }
 
 header {
-  font-family: 'Coolvetica';
   position: fixed;
   top: 0;
   left: 0;
@@ -36,10 +32,18 @@ header {
  font-size: 6vh; 
 }
 
-.in-header{
+header a{
+  margin: 20px;
+  text-decoration: none;
+  color:rgb(177, 213, 212);
+}
+
+header h1{
   font-size: 3vh;
   display:flex;
-  margin:20px;
+  margin:5vh;
+  background-color: rgb(81, 142, 106);
+  color:rgb(221, 228, 228);
 }
 
 .navigation-tab{
@@ -84,7 +88,6 @@ main{
   margin-top: 8.5vh;
   margin-bottom: 4vh;
   border: 3px solid black;
-
 }
 
 .post{
@@ -93,3 +96,9 @@ main{
   margin-bottom: 10px;
   border-radius:rgb(177, 213, 212);
 }
+
+.tab-clicked{
+  font-weight: bold;
+  color: rgb(251, 97, 70)
+}
+
