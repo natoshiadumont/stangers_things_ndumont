@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, useParams, NavLink, Route } from 'react-router-dom';
 import { Home } from './components/home';
 import { Posts } from './components/posts';
 import { Profile } from './components/profile'
 import { fetchAllPosts } from './api';
+
+
 const App = () => {
-  
-  
+
   return (
     <BrowserRouter >
       <header>
@@ -21,7 +22,7 @@ const App = () => {
       </header>
       <Switch>
         <Route exact path='/'><Home /> </Route>
-        <Route exact path='/posts'><Posts /> </Route>
+        <Route exact path='/posts'><Posts /></Route>
         <Route exact path='/profile'><Profile /> </Route>
       </Switch>
       <footer>
