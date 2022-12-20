@@ -10,7 +10,7 @@ export const Posts =() => {
 
   // console.log(posts);
   return (
-    <div id="post-container">
+    <div className="content-container">
           {posts.map((post, index)=> {
       return(
         <div className="post" key={index}>
