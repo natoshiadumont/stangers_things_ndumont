@@ -5,15 +5,15 @@ import { Home } from './components/home';
 import { Posts } from './components/posts';
 import { Profile } from './components/profile'
 import {Register} from './components/register'
-import { fetchAllPosts } from './api';
+import { fetchAllPosts, createNewUser, logIn } from './api';
 
 
 const App = () => {
-
+  const [token, setToken] = useState();
   return (
     <BrowserRouter >
       <header>
-        <h1> Stranger's Things </h1>
+        <h1 id="header-title"><img id="logo" src='https://cdn-icons-png.flaticon.com/512/2880/2880403.png'></img> Stranger's Things </h1>
         <div>
           <NavLink exact to='/'> Home </NavLink>
           <NavLink to='/posts'> Posts </NavLink>

@@ -12,3 +12,31 @@ export const fetchAllPosts = async () => {
     console.log('Issue fetching all posts:', error);
   }
 }
+
+export const createNewUser = async (username, password) => {
+  fetch(`${BASE_URL}/users/register`, {
+  method: "POST",
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    user: {
+      username: username,
+      password: password
+    }
+  })
+}).then(response => response.json())
+  .then(result => {
+    console.log(result);
+  })
+  .catch(console.error);
+}
+
+// export const logIn = async{
+//   try{
+
+//   }
+//   catch(error){
+//     console.log("Issue creating new account", error)
+//   }
+// }
