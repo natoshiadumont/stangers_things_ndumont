@@ -25,8 +25,8 @@ export const Profile = ({ authenticated }) => {
                 
                     <div key={index} className="messages-container">
 
-                      <div id="message-title">Message related to the "{message.post.title}" post:</div>
-                      <div id="message-content">{message.fromUser.username}: "{message.content}"</div>
+                      <div id="message-title">Related to the "{message.post.title}" post:</div>
+                      <div id="message-content">From {message.fromUser.username}: "{message.content}"</div>
 
                     </div> 
               )
@@ -40,7 +40,7 @@ export const Profile = ({ authenticated }) => {
                 
                     <div key={index} className="messages-container">
 
-                      <div id="message-title">Message related to the "{message.post.title}" post:</div>
+                      <div id="message-title">Related to the "{message.post.title}" post:</div>
                       <div id="message-content">You sent: "{message.content}"</div>
 
                     </div> 

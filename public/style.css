@@ -122,9 +122,11 @@ footer {
 }
 #message-title {
   font-size: 20px;
+  font-weight: bold;
 }
 #message-content {
   font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 #submit-search{
@@ -158,6 +160,21 @@ footer {
   filter: drop-shadow(5px 5px 10px #918d8d7c);
   margin-bottom:0;
 }
+
+#search-field {
+  margin-right: 10px;
+  background-color: #46cc6c82;
+  color: #efefed;
+  font-size:18px;
+  font-weight: bold;
+
+}
+
+   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+  }
+
 
 #new-post-icon{
   height: 40px;

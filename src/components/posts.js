@@ -23,14 +23,13 @@ export const Posts = ({ authenticated }) => {
         }}>
           <label htmlFor="Search"></label>
           <input 
-          type="text" placeholder="Type here to search for a post..."
+          type="text" placeholder="Click here to search for a post..."
           id="search-field"
           value={search}
           onChange={(event) => {
             setSearch(event.target.value)
           }}
           ></input>
-          <input id="submit-search" type="submit" value="Search"></input>
           {localStorage.getItem('myToken') ?
             <Link to="/new-post">
               <img id="new-post-icon" src="https://cdn-icons-png.flaticon.com/512/753/753317.png">
@@ -107,7 +106,7 @@ export const Posts = ({ authenticated }) => {
                             let postID = await post._id;
                             console.log(message, postID);
                             messageSeller(message, postID);
-                            document.getElementById('message-content').value = '';
+                            document.getElementById('message-content').reset();
                         }catch(error){
                           console.error(error);
                         }
@@ -115,7 +114,6 @@ export const Posts = ({ authenticated }) => {
                           }
                           }
                       >
-
                         <input id="message-content" required type="text" 
                         placeholder="Type a message to the seller here..."
                         onChange={(event)=>{
@@ -127,7 +125,6 @@ export const Posts = ({ authenticated }) => {
                         src="https://cdn-icons-png.flaticon.com/512/7718/7718904.png"
                         alt="submit"
                          
-
                         ></input>
                       </form>
 
