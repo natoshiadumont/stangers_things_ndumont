@@ -58,13 +58,13 @@ const App = () => {
 
       <Switch>
         <Route exact path='/' authenticated={authenticated}> <Home
-          setToken={setToken} setAuthenicated={setAuthenticated} /> </Route>
+          setToken={setToken} token={token} setAuthenicated={setAuthenticated} /> </Route>
         <Route path='/posts'> 
         <Posts authenticated={authenticated} deletePost={deletePost} messageSeller={messageSeller} />
         </Route>
         <Route path='/profile'> <Profile authenticated={authenticated}/> </Route>
         <Route path='/register'> <Register
-          setToken={setToken} /> </Route>
+          setToken={setToken} token={token}/> </Route>
         <Route path='/new-post'> <NewPost /> </Route>
 
       </Switch>
