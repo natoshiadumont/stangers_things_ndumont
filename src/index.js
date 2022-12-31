@@ -5,7 +5,7 @@ import { Home } from './components/home';
 import { Posts } from './components/posts';
 import { Profile } from './components/profile'
 import { Register } from './components/register'
-import { fetchAllPosts, createNewUser, logIn, newPos, getUser, deletePost, messageSeller } from './api';
+import { fetchAllPosts, createNewUser, logIn, newPost, getUser, deletePost, messageSeller } from './api';
 import { NewPost } from './components/new-post';
 
 
@@ -46,9 +46,6 @@ const App = () => {
               <img
               id='header-button'
               src="https://cdn-icons-png.flaticon.com/512/6811/6811882.png"
-              onClick={(event) => {
-               
-              }}
             ></img>
             </a>
           }

@@ -5,10 +5,12 @@ import { Link } from "react-router-dom";
 export const Posts = ({ authenticated }) => {
   const [posts, setPosts] = useState([]);
   const [user, setUser] = useState('');
+  const [search, setSearch] = useState('');
   const [message, setMessage] = useState('')
   useEffect(() => {
     fetchAllPosts().then((results) => { setPosts(results) });
-    getUser().then((results) => { setMessage(results.username) });
+    getUser().then((results) => { setUser(results.username) });
+
   }, []);
 
   // console.log(posts);
@@ -20,7 +22,14 @@ export const Posts = ({ authenticated }) => {
           // console.log(event.target.value);
         }}>
           <label htmlFor="Search"></label>
-          <input type="text" placeholder="Type here to search for a post..." ></input>
+          <input 
+          type="text" placeholder="Type here to search for a post..."
+          id="search-field"
+          value={search}
+          onChange={(event) => {
+            setSearch(event.target.value)
+          }}
+          ></input>
           <input id="submit-search" type="submit" value="Search"></input>
           {localStorage.getItem('myToken') ?
             <Link to="/new-post">
@@ -33,7 +42,22 @@ export const Posts = ({ authenticated }) => {
 
       <div id="all-posts">
 
-        {posts.map((post, index) => {
+        {posts.filter((currentPost) => {
+            
+            if(search === ''){
+              return currentPost;
+              // console.log('empty string search works!')          
+                      }
+            else if(
+            currentPost.title.toLowerCase().includes(search.toLowerCase())
+            || currentPost.price.toLowerCase().includes(search.toLowerCase())
+            || currentPost.description.toLowerCase().includes(search.toLowerCase())
+            || currentPost.location.toLowerCase().includes(search.toLowerCase())
+            || currentPost.author.username.toLowerCase().includes(search.toLowerCase())
+            ){
+              return currentPost;
+            }
+                    }).map((post, index) => {
           return (
             <div className="post" key={index}>
               <h2>{post.title}</h2>
