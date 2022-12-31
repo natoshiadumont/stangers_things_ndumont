@@ -1,20 +1,33 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { createNewUser } from "../api";
 
-export const Register = () => {
+export const Register = ({setToken}) => {
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
+  const history = useHistory();
+
   return (
-    <div className="content-container">
+    <div className="register-container">
       <h1>Create a Stranger's Things Account:</h1>
       <form id="create-account"
-        onSubmit={(event)=>{
+        onSubmit={async(event)=>{
+          
           event.preventDefault();
-          createNewUser(username, password);
-          console.log(username, password);
+
+          try{
+          const userInfo = await createNewUser(username, password);
+          setToken(userInfo);
+          // localStorage.setItem('myToken', );
+          // console.log(userInfo);
+          history.push("/profile");
+          }
+          catch(error){
+            console.error('Having trouble registering account:', error);
+          }
         }}>
-        <label htmlFor="username" >Type a unique username here:</label>
+        <label htmlFor="username" >Create a unique username here:</label>
         <input type="text"
           placeholder="ex. username"
           id="create-username"
@@ -26,7 +39,7 @@ export const Register = () => {
 
         </input>
 
-        <label htmlFor="create-password">Create a password for your account:</label>
+        <label htmlFor="create-password">Set a password for your new account:</label>
         <input
           type="password"
           placeholder="ex. password321"
@@ -38,7 +51,7 @@ export const Register = () => {
         >
         </input>
 
-        <input type="submit" value="Log In"></input>
+        <input type="submit" value="Create Account"></input>
         <Link to="/">Already an ST member? Click here to log in!</Link>
       </form>
     </div>

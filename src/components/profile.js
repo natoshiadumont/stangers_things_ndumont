@@ -1,20 +1,41 @@
+import React, { useState, useEffect } from "react"
+import { getUser } from "../api";
 
-export const Profile = () => {
+export const Profile = ({ authenticated }) => {
+
+  const [posts, setPosts] = useState([]);
+  const [user, setUser] = useState('');
+  const [messages, setMessages] = useState([])
+
+  useEffect(() => {
+    getUser().then((results) => { setUser(results.username) });
+    getUser().then((results) => { setMessages(results.messages) });
+    console.log(messages);
+  }, []);
+
   return (
-    <div className="content-container">
-      <h1>Profile</h1>
+    <div className="profile-container">
+      <h3>Profile</h3>
+      {authenticated ?
+        <>
+          <div id="sent">Sent Messages:
+            {messages.map((message, index) => {
+              if (message.fromUser.username === user) {
+                return (
+                
+                    <div key={index} className="messages-container">
 
-    <div>Create a New Post:
-    <form>
-      <label for='item-title' placeholder="In a few words, what are you selling?">Title:</label>
-      <input type='text' id='post-title'></input>
+                      <div id="message-title">Message related to "{message.post.title}" post:</div>
+                      <div id="message-content">You sent: "{message.content}"</div>
 
-      <label for='item-description'>Description</label>
-      <input type='text' id='description' placeholder='Type specifice details about what you are selling'></input>
-    
-    </form>
-
-    </div>
+                    </div> 
+              )
+            }
+            }
+          </div>
+          <div id="recieved">Recieved Messages:</div>
+        </>
+        : <div>You must be logged into an account to view profile details.</div>}
     </div>
   )
 }
