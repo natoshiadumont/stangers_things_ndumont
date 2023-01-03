@@ -247,7 +247,6 @@ footer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
 .content-container {
@@ -291,7 +290,6 @@ footer {
 .register-container h1 {
   font-size: xxx-large;
   font-weight: bold;
-
 }
 
 .profile-container {
@@ -300,8 +298,6 @@ footer {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  height: 100%;
-  overflow-y: auto;
   text-align: center;
   font-size: xxx-large;
 }

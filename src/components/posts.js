@@ -10,7 +10,6 @@ export const Posts = ({ authenticated }) => {
   useEffect(() => {
     fetchAllPosts().then((results) => { setPosts(results) });
     getUser().then((results) => { setUser(results.username) });
-
   }, []);
 
   // console.log(posts);
@@ -23,7 +22,7 @@ export const Posts = ({ authenticated }) => {
         }}>
           <label htmlFor="Search"></label>
           <input 
-          type="text" placeholder="Click here to search for a post..."
+          type="text" placeholder="Type here to search for a post..."
           id="search-field"
           value={search}
           onChange={(event) => {
