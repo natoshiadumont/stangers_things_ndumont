@@ -6,9 +6,8 @@ import { Posts } from './components/posts';
 import { Profile } from './components/profile'
 import { Register } from './components/register'
 import { fetchAllPosts, createNewUser, logIn, newPost, getUser, deletePost, messageSeller } from './api';
+//General Question: do these functions above that are grayed out here need to still be here in order for them to render in the app?
 import { NewPost } from './components/new-post';
-
-
 
 
 const App = () => {

@@ -93,9 +93,6 @@ export const Posts = ({ authenticated }) => {
                           }
                         />
                       </button>
-                      <button className="edit-post">
-                        <img className="delete-post-icon" src="https://cdn-icons-png.flaticon.com/512/473/473351.png" />
-                      </button>
                     </>
                     : <div id="message-seller-container">
                       <form  id="message-seller-form"
